@@ -15,7 +15,12 @@
   background-color: beige;
   padding: 2rem
 }
-
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+header{
+  color: rgb(104, 104, 104);
+}
 .new-todo {
   padding: 16px 16px 16px 60px;
   border: none;
@@ -23,19 +28,7 @@
   box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
 }
 
-.title {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 700;
-}
-.title::after {
-  content: '';
-  width: 180px;
-  height: 2px;
-  background-color: #fff;
-  display: block;
-  margin: auto;
-}
+
 .container .form_todo {
   width: 80%;
   margin: auto;
@@ -49,23 +42,22 @@
   height: 15px;
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 1.5rem;
   font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 } 
 .container .form_todo .btn {
   width: 10%;
   height: 35px;
-  border: 1px solid #fff;
-  border-radius: 5px;
   padding: 5px;
+  margin-left: 10px;
   background: transparent;
-  font-size: 14px;
-  color: #fff;
+  font-size: 12px;
+  color: rgb(104, 104, 104);
   cursor: pointer;
 }
 .container .form_todo .btn:hover {
-  background: #fff;
-  color: #276c91;
+  color: #000;
 }
 
 .todos_wrapper {
@@ -78,17 +70,9 @@
 .todo_title {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: rgb(104, 104, 104);
 }
 
-.todo_title::after {
-  content: '';
-  width: 100px;
-  height: 2px;
-  background-color: #fff;
-  display: block;
-  margin: auto;
-}
 .todos_list {
   width: 50%;
   display: flex;
@@ -99,9 +83,8 @@
 .todo_card {
   width: 100%;
   height: auto;
-
   background: #fff;
-  padding: 2px 5px;
+  padding: 1rem;
   border-radius: 5px;
   margin-top: 3px;
   margin-right: 6px;
@@ -111,38 +94,28 @@
 }
 
 .icon-check-todo {
-
   color: #000;
   padding: 5px;
-  font-size: 12px;
+  font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
 }
 .icon-trash-todo {
-
   color: #000;
   padding: 5px;
-  font-size: 12px;
+  font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
 }
 
-.icon-progress-todo {
-  background: #fff;
-  color: green;
-  padding: 5px;
-  font-size: 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 5px;
-}
 .completed_card {
   width: 100%;
   height: auto;
-  color: #fff;
-  background: #00b09b;
-  padding: 10px 5px;
+  color: #000;
+  background: #fff;
+  padding: 1rem;
   border-radius: 5px;
   margin-top: 3px;
+  margin-left: 10px;;
 }
