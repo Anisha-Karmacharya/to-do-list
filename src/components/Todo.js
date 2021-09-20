@@ -1,53 +1,22 @@
-import React, { memo, useState } from 'react'
+import React from "react";
+import {FaCheck, FaTrashAlt} from "react-icons/fa";
 
-const Todo = memo(props => {
-    const {
-        todo,
-        markCompleted,
-        getEditTodo,
-        todoEditingId,
-        editTodo,
-        index,
-        removeTodo
-    } = props
-    const isEditing = todoEditingId === todo.id
-    const [text, setText] = useState(todo.text)
-    const onEditTodo = () => {
-        editTodo({
-            ...todo,
-            text
-        }, index)
-        getEditTodo('')
-    }
-
-    return (
-        <li className={`${isEditing ? 'editing' : ''} ${todo.isCompleted ? 'completed' : ''}`}>
-            {
-                !isEditing ?
-                    <div className="view">
-                        <input
-                            className="toggle"
-                            type="checkbox"
-                            checked={todo.isCompleted}
-                            onChange={() => markCompleted(todo.id)}
-                        />
-                        <label onDoubleClick={() => getEditTodo(todo.id)}>{todo.text}</label>
-                        <button className="destroy" onClick={() => removeTodo(todo.id)} />
-                    </div> :
-                    <input
-                        className="edit"
-                        value={text}
-                        onChange={(e) => setText(e.target.value)}
-                        onBlur={onEditTodo}
-                        onKeyPress={(e) => {
-                            if (e.key === 'Enter' && text) {
-                                onEditTodo()
-                            }
-                        }}
-                    />
-            }
-        </li>
+const Todo = () => {
+    return(
+        <div className="todos_wrapper">
+        <div className="todos_list">
+          <h3 className="todo_title">Todos List</h3>
+          <div className="todo_card" >
+              <p className="card_text"></p>
+              <FaCheck  className="icon-check-todo"/>
+              <FaTrashAlt  className="icon-trash-todo"/>
+            </div>
+        </div>
+        <div className="todos_list">
+          <h3 className="todo_title">Completed</h3>
+        </div>
+       </div>
     )
-})
+}
 
-export default Todo
+export default Todo;
