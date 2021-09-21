@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
-import {FaCheck, FaTrashAlt} from "react-icons/fa";
+import React, {useEffect, useState} from "react";
+import {FaCheck, FaTrashAlt, FaEdit} from "react-icons/fa";
 
 const TodoList = ({completed, setCompleted, todo, setTodo}) => {
+
   const addtoCompleted = (id) => {
     const item = todo.find(x => x.id === id);
     setCompleted([item, ...completed]);
@@ -13,6 +14,7 @@ const TodoList = ({completed, setCompleted, todo, setTodo}) => {
     const filterarray = todo.filter(x => x.id !== id);
     setTodo(filterarray);
   }
+
     return(
         <div className="todos_wrapper">
         <div className="todos_list">
@@ -20,6 +22,7 @@ const TodoList = ({completed, setCompleted, todo, setTodo}) => {
           {todo.map((item) => 
             <div className="todo_card" key={item.id}>
               <p className="card_text">{item.text}</p>
+              <FaEdit className="icon-check-todo"/>
               <FaCheck onClick={() => addtoCompleted(item.id)} className="icon-check-todo"/>
               <FaTrashAlt onClick={() => deleteTodo(item.id)} className="icon-trash-todo"/>
           </div>
